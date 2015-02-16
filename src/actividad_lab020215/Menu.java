@@ -19,6 +19,12 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         cont.setLayout(new FlowLayout());
+        this.setTitle("Lab 02/02/15");
+    }
+    public void clrJPanel(){
+        cont.removeAll();
+        cont.updateUI();
+        cont.repaint();        
     }
 
     /**
@@ -137,9 +143,9 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        this.setTitle("Resistencias Paralelo.");
         Res_paralelo p = new Res_paralelo();
-        cont.removeAll();
-        cont.repaint();
+        clrJPanel();
         cont.add(p);
         cont.validate();
     }//GEN-LAST:event_jMenuItem2ActionPerformed

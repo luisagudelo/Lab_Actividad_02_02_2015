@@ -31,8 +31,6 @@ public class Res_paralelo extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        volt = new javax.swing.JTextField();
         res1 = new javax.swing.JTextField();
         res2 = new javax.swing.JTextField();
         res3 = new javax.swing.JTextField();
@@ -56,17 +54,6 @@ public class Res_paralelo extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Por favor ingrese el el valor del voltaje y las resistencias");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Voltaje:");
-
-        volt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        volt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                voltActionPerformed(evt);
-            }
-        });
 
         res1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -98,13 +85,9 @@ public class Res_paralelo extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(res2))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel1))
+                                .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(volt)
-                                    .addComponent(res1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(res1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -123,10 +106,6 @@ public class Res_paralelo extends javax.swing.JPanel {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(volt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(res1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(resultado_paralelo))
@@ -143,17 +122,13 @@ public class Res_paralelo extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(calc)))
-                .addGap(41, 41, 41))
+                .addGap(64, 64, 64))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void voltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_voltActionPerformed
-
     private void calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcActionPerformed
         CalcResParalelo paralelo = new CalcResParalelo();
-        resultado_paralelo.setText("Resistencia total: \n \n"+
+        resultado_paralelo.setText("Resistencia total: "+
                                     paralelo.resParalelo(res1.getText(),res2.getText(),res3.getText()));
     }//GEN-LAST:event_calcActionPerformed
 
@@ -164,11 +139,9 @@ public class Res_paralelo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField res1;
     private javax.swing.JTextField res2;
     private javax.swing.JTextField res3;
     private javax.swing.JLabel resultado_paralelo;
-    private javax.swing.JTextField volt;
     // End of variables declaration//GEN-END:variables
 }
