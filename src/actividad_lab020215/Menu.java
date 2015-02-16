@@ -5,6 +5,8 @@
  */
 package actividad_lab020215;
 
+import java.awt.FlowLayout;
+
 /**
  *
  * @author 12
@@ -16,6 +18,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        cont.setLayout(new FlowLayout());
     }
 
     /**
@@ -29,7 +32,8 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        cont = new javax.swing.JPanel();
+        MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -59,18 +63,32 @@ public class Menu extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 formComponentAdded(evt);
             }
         });
 
+        cont.setPreferredSize(new java.awt.Dimension(371, 212));
+
+        javax.swing.GroupLayout contLayout = new javax.swing.GroupLayout(cont);
+        cont.setLayout(contLayout);
+        contLayout.setHorizontalGroup(
+            contLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
+        );
+        contLayout.setVerticalGroup(
+            contLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 222, Short.MAX_VALUE)
+        );
+
         jMenu1.setText("Archivo");
 
         jMenuItem1.setText("Salir");
         jMenu1.add(jMenuItem1);
 
-        jMenuBar1.add(jMenu1);
+        MenuBar.add(jMenu1);
 
         jMenu2.setText("Módulos");
 
@@ -88,26 +106,31 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem4.setText("Calcular hipotenusa");
         jMenu2.add(jMenuItem4);
 
-        jMenuBar1.add(jMenu2);
+        MenuBar.add(jMenu2);
 
         jMenu3.setText("Ayuda");
 
         jMenuItem5.setText("Acerca de...");
         jMenu3.add(jMenuItem5);
 
-        jMenuBar1.add(jMenu3);
+        MenuBar.add(jMenu3);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 233, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(cont, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -115,7 +138,10 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Res_paralelo p = new Res_paralelo();
-        this.add(p);
+        cont.removeAll();
+        cont.repaint();
+        cont.add(p);
+        cont.validate();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
@@ -158,11 +184,12 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JPanel cont;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
