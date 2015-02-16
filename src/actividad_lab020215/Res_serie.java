@@ -35,7 +35,7 @@ public class Res_serie extends javax.swing.JPanel {
         res2 = new javax.swing.JTextField();
         res3 = new javax.swing.JTextField();
         calc = new javax.swing.JButton();
-        resultado_paralelo = new javax.swing.JLabel();
+        resultado_serie = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(371, 212));
 
@@ -53,7 +53,7 @@ public class Res_serie extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Por favor ingrese el el valor del voltaje y las resistencias");
+        jLabel4.setText("Por favor ingrese el el valor de las resistencias");
 
         res1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -68,36 +68,35 @@ public class Res_serie extends javax.swing.JPanel {
             }
         });
 
-        resultado_paralelo.setText("Resistencia total:");
+        resultado_serie.setText("Resistencia total:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(res2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(res1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(res3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(resultado_paralelo)
-                            .addComponent(calc)))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(res2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(res1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(res3, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(resultado_serie)
+                    .addComponent(calc))
+                .addGap(52, 52, 52))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +107,7 @@ public class Res_serie extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(res1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(resultado_paralelo))
+                    .addComponent(resultado_serie))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -127,9 +126,9 @@ public class Res_serie extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcActionPerformed
-        CalcResSerie paralelo = new CalcResSerie();
-        resultado_paralelo.setText("Resistencia total: "+
-                                    paralelo.resParalelo(res1.getText(),res2.getText(),res3.getText()));
+        CalcResSerie serie = new CalcResSerie();
+        resultado_serie.setText("Resistencia total: "+
+                                    serie.resSerie(res1.getText(),res2.getText(),res3.getText()));
     }//GEN-LAST:event_calcActionPerformed
 
 
@@ -142,6 +141,6 @@ public class Res_serie extends javax.swing.JPanel {
     private javax.swing.JTextField res1;
     private javax.swing.JTextField res2;
     private javax.swing.JTextField res3;
-    private javax.swing.JLabel resultado_paralelo;
+    private javax.swing.JLabel resultado_serie;
     // End of variables declaration//GEN-END:variables
 }

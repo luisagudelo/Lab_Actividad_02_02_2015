@@ -17,11 +17,11 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Menu() {
-        initComponents();
+        initComponents();  
         cont.setLayout(new FlowLayout());
         this.setTitle("Lab 02/02/15");
     }
-    public void clrJPanel(){
+    public void clrJPanel(){        
         cont.removeAll();
         cont.updateUI();
         cont.repaint();        
@@ -107,6 +107,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.add(jMenuItem2);
 
         jMenuItem3.setText("Calcular resistencia (Serie)");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setText("Calcular hipotenusa");
@@ -143,8 +148,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        this.setTitle("Resistencias Paralelo.");
-        Res_serie p = new Res_serie();
+        this.setTitle("Resistencia Paralelo.");
+        Res_paralelo p = new Res_paralelo();
         clrJPanel();
         cont.add(p);
         cont.validate();
@@ -153,6 +158,14 @@ public class Menu extends javax.swing.JFrame {
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_formComponentAdded
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        this.setTitle("Resistencia Serie.");
+        Res_serie s = new Res_serie();
+        clrJPanel();
+        cont.add(s);
+        cont.validate();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
