@@ -144,7 +144,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         this.setTitle("Resistencias Paralelo.");
-        Res_paralelo p = new Res_paralelo();
+        Res_serie p = new Res_serie();
         clrJPanel();
         cont.add(p);
         cont.validate();

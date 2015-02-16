@@ -7,9 +7,13 @@ package actividad_lab020215;
 
 /**
  *
- * @author 8
+ * @author 12
  */
 public class CalcResSerie {
-    
-    
+    public int resParalelo(String res1, String res2, String res3){
+        int paralelo = Integer.parseInt(res1)+
+                       Integer.parseInt(res2)+
+                       Integer.parseInt(res3);
+        return paralelo;
+    }
 }

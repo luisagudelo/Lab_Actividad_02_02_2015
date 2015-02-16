@@ -9,12 +9,12 @@ package actividad_lab020215;
  *
  * @author 12
  */
-public class Res_paralelo extends javax.swing.JPanel {
+public class Res_serie extends javax.swing.JPanel {
 
     /**
      * Creates new form Res_paralelo
      */
-    public Res_paralelo() {
+    public Res_serie() {
         initComponents();
     }
 
@@ -127,7 +127,7 @@ public class Res_paralelo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcActionPerformed
-        CalcResParalelo paralelo = new CalcResParalelo();
+        CalcResSerie paralelo = new CalcResSerie();
         resultado_paralelo.setText("Resistencia total: "+
                                     paralelo.resParalelo(res1.getText(),res2.getText(),res3.getText()));
     }//GEN-LAST:event_calcActionPerformed
